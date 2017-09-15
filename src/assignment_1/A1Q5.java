@@ -44,13 +44,54 @@ public class A1Q5 {
       new Thing (Owensville, 2,2,Direction.NORTH);
       
       //Lable robots
-      Robot Sunsar = new robot(Owensville, 3, 3, Direction.EAST);
+      Sunsar.setLabel("S");
+      OWEN.setLabel("O");
+      
+      //move OWEN
+      OWEN.move();
+      
+      //owen picks up thing
+      OWEN.pickThing();
       
       
+      //Turn Sunsar
+      Sunsar.turnLeft();
+      Sunsar.turnLeft();
       
+      //move Sunsar
+      Sunsar.move();
       
+      //Turn owen left
+      OWEN.turnLeft();
       
+      //Turn Sunsar
+      Sunsar.turnLeft();
+      Sunsar.turnLeft();
+      Sunsar.turnLeft();
+
+      //move OWEN
+      OWEN.move();
       
+      //owen picks up thing
+      OWEN.pickThing();
+      
+      //move Sunsar
+      Sunsar.move();
+      
+      //Sunsar picks up thing
+      Sunsar.pickThing();
+      
+      //move Sunsar
+      Sunsar.move();
+      
+      //Sunsar picks up thing
+      Sunsar.pickThing();
+      
+      //Turn Sunsar
+      Sunsar.turnLeft();
+      
+      //Turn owen left
+      OWEN.turnLeft();
       
       
       
