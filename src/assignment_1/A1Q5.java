@@ -93,7 +93,8 @@ public class A1Q5 {
       //Turn owen left
       OWEN.turnLeft();
       
-      
+      //move OWEN
+      OWEN.move();
       
     }
 }
