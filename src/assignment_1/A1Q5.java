@@ -96,5 +96,8 @@ public class A1Q5 {
       //move OWEN
       OWEN.move();
       
+      //owen picks up thing
+      OWEN.pickThing();
+      
     }
 }
