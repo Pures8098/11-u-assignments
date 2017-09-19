@@ -1,0 +1,27 @@
+Evaluate the following Boolean expressions for a Robot. Assume the robot is on intersection (1, 5) facing north. There is a Wall immediately in front of it. 
+In each case your answer will be either true or false.
+this.getAvenue(true) > 0
+this.getAvenue(true) <= 5
+this.getStreet(false) != 1
+!(this.getStreet(false) == 1)
+this.frontIsClear(false)
+!this.frontIsClear(true)
+this.frontIsClear(true) == false
+2. Consider the following if-else statements. Do they behave the same way or differently? Justify your answer.
+
+Statement 1
+if(karel.canPickThing())                                    
+{                                                        
+    karel.turnRight();                               
+} else {                                                   
+    karel.turnLeft();                                
+}  
+Statement 2
+if(!karel.canPickThing())
+{                                                                          
+    karel.turnLeft();
+} else {                                                                                                                          
+    karel.turnRight();
+}   
+
+these 2 statements act differently because the way the robot turns is opposite if using the second option
