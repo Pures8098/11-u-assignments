@@ -44,7 +44,7 @@ public class A2Q3 {
             //Robot counts items in backpack
             while(OWEN.countThingsInBackpack() < 7) {
             OWEN.move();
-            OWEN.pickThing();
+            OWEN.pickThing();  
                 
             
          
