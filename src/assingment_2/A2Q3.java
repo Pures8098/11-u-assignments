@@ -45,9 +45,6 @@ public class A2Q3 {
             while(OWEN.countThingsInBackpack() < 7) {
             OWEN.move();
             OWEN.pickThing();  
-                
-            
-         
             }
             OWEN.move();
             OWEN.move();
