@@ -76,9 +76,10 @@ public class A2Q5 {
         OWEN.move();
         OWEN.move();
         OWEN.turnLeft();
-        
-        
-        
+        OWEN.turnLeft();
+        OWEN.turnLeft();
+        OWEN.move();
+        OWEN.turnLeft();
         
         
         }
