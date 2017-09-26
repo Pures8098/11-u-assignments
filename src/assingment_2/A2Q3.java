@@ -31,23 +31,23 @@ public class A2Q3 {
 
 
             if (OWEN.getDirection() == Direction.NORTH) {
-                if (OWEN.getAvenue()< 0) {
+                if (OWEN.getAvenue() < 0) {
                     OWEN.move();
                 }
             }
             if (OWEN.getDirection() == Direction.SOUTH) {
-                if (OWEN.getAvenue()> 0) {
+                if (OWEN.getAvenue() > 0) {
                     OWEN.move();
                 }
             }
             if (OWEN.getDirection() == Direction.WEST) {
-                if (OWEN.getStreet()> 0) {
+                if (OWEN.getStreet() > 0) {
                     OWEN.move();
                 }
             }
 
             if (OWEN.getDirection() == Direction.EAST) {
-                if (OWEN.getStreet()< 0) {
+                if (OWEN.getStreet() < 0) {
                     OWEN.move();
                 }
             }
