@@ -24,7 +24,7 @@ public class A2Q3 {
         //Create city
         City Owensville = new City();
         //Create robot
-        Robot OWEN = new Robot(Owensville, -4, 3, Direction.WEST);
+        Robot OWEN = new Robot(Owensville, 4, 3, Direction.WEST);
 
         //move robot
         while (true) {
