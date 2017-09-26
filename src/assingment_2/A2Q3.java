@@ -24,58 +24,143 @@ public class A2Q3 {
         //Create city
         City Owensville = new City();
         //Create robot
-        Robot OWEN = new Robot(Owensville, 0, 2, Direction.NORTH);
+        Robot OWEN = new Robot(Owensville, -4, 3, Direction.WEST);
 
         //move robot
         while (true) {
 
 
             if (OWEN.getDirection() == Direction.NORTH) {
-                if (OWEN.getAvenue() < 0) {
-                    OWEN.move();
-                }
-            }
-            if (OWEN.getDirection() == Direction.SOUTH) {
-                if (OWEN.getAvenue() > 0) {
-                    OWEN.move();
-                }
-            }
-            if (OWEN.getDirection() == Direction.WEST) {
-                if (OWEN.getStreet() > 0) {
-                    OWEN.move();
+                if (OWEN.getStreet() < 0) {
+                    OWEN.turnLeft();
+                    OWEN.turnLeft();
+
+                } else {
+                    if (OWEN.getStreet() > 0) {
+                        OWEN.move();
+
+                    }
                 }
             }
 
-            if (OWEN.getDirection() == Direction.EAST) {
-                if (OWEN.getStreet() < 0) {
+            if (OWEN.getDirection() == Direction.SOUTH) {
+                if (OWEN.getStreet() > 0) {
+                    OWEN.turnLeft();
+                    OWEN.turnLeft();
+
+                } else {
+                    if (OWEN.getStreet() < 0) {
+                        OWEN.move();
+
+                    }
+                }
+            }
+
+            if (OWEN.getDirection() == Direction.WEST) {
+                if (OWEN.getAvenue() > 0) {
                     OWEN.move();
+
+                } else {
+                    if (OWEN.getAvenue() < 0) {
+                        OWEN.turnLeft();
+                        OWEN.turnLeft();
+
+                    }
+                }
+            }
+
+
+
+            if (OWEN.getDirection() == Direction.EAST) {
+                if (OWEN.getAvenue() < 0) {
+                    OWEN.move();
+
+                } else {
+                    if (OWEN.getAvenue() > 0) {
+                        OWEN.turnLeft();
+                        OWEN.turnLeft();
+
+
+                    }
+
+                }
+            }
+
+            if (OWEN.getDirection() == Direction.NORTH) {
+                if (OWEN.getStreet() == 0) {
+                    if (OWEN.getAvenue() > 0) {
+                        OWEN.turnLeft();
+                    }
+
+                } else {
+                    if (OWEN.getStreet() == 0) {
+                        if (OWEN.getAvenue() < 0) {
+                            OWEN.turnLeft();
+                        }
+
+
+                    }
+                }
+            }
+            if (OWEN.getDirection() == Direction.SOUTH) {
+                if (OWEN.getStreet() == 0) {
+                    if (OWEN.getAvenue() > 0) {
+                        OWEN.turnLeft();
+                    }
+
+                } else {
+                    if (OWEN.getStreet() == 0) {
+                        if (OWEN.getAvenue() < 0) {
+                            OWEN.turnLeft();
+                        }
+
+
+                    }
+
+
+
+                }
+            }
+            if (OWEN.getDirection() == Direction.WEST) {
+                if (OWEN.getAvenue() == 0) {
+                    if (OWEN.getStreet() > 0) {
+                        OWEN.turnLeft();
+                    }
+
+                } else {
+                    if (OWEN.getAvenue() == 0) {
+                        if (OWEN.getStreet() < 0) {
+                            OWEN.turnLeft();
+                        }
+
+
+                    }
+
+
+
+                }
+            }
+            if (OWEN.getDirection() == Direction.EAST) {
+                if (OWEN.getAvenue() == 0) {
+                    if (OWEN.getStreet() > 0) {
+                        OWEN.turnLeft();
+                    }
+
+                } else {
+                    if (OWEN.getAvenue() == 0) {
+                        if (OWEN.getStreet() < 0) {
+                            OWEN.turnLeft();
+                        }
+
+
+                    }
+
+
+
                 }
             }
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
