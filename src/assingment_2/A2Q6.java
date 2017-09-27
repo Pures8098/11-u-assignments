@@ -73,7 +73,7 @@ public class A2Q6 {
         new Wall(Owensville, 8, 8, Direction.WEST);
         new Wall(Owensville, 9, 3, Direction.WEST);
         new Wall(Owensville, 9, 2, Direction.SOUTH);
-
+        new Wall(Owensville, 0, 2, Direction.NORTH);
 
         //create thing
         new Thing(Owensville, 1, 2, Direction.WEST);
@@ -94,22 +94,33 @@ public class A2Q6 {
         new Thing(Owensville, 8, 6, Direction.WEST);
 
         //Move robot
+        OWEN.move();
+        OWEN.turnLeft();
+
+
         while (true) {
             
-            if (OWEN.canPickThing()){
-            OWEN.pickThing();
-            }
             
-            if (OWEN.frontIsClear()){
-            OWEN.move();
+
             
-            }else{
-            if(!(OWEN.frontIsClear())){    
-            OWEN.turnLeft();
-            OWEN.turnLeft();
-            OWEN.turnLeft();
-        }
+            
+                if (OWEN.canPickThing()) {
+                    OWEN.pickThing();
+                }
+
+                if (OWEN.frontIsClear()) {
+                    OWEN.move();
+
+                } else {
+                    if (!(OWEN.frontIsClear())) {
+                        OWEN.turnLeft();
+                        OWEN.turnLeft();
+                        OWEN.turnLeft();
+
+
+                    }
+                }
             }
         }
     }
-}
+
