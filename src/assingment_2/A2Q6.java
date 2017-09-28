@@ -94,28 +94,24 @@ public class A2Q6 {
         new Thing(Owensville, 8, 6, Direction.WEST);
 
         //Move robot
-        OWEN.move();
-        OWEN.turnLeft();
+
 
 
         while (true) {
-            
-            
 
-            
-            
-                if (OWEN.canPickThing()) {
-                    OWEN.pickThing();
-                }
+            if (OWEN.canPickThing()) {
+                OWEN.pickThing();
+            }
 
-                if (OWEN.frontIsClear()) {
-                    OWEN.move();
+            if (OWEN.frontIsClear()) {
+                OWEN.turnLeft();
 
                 } else {
                     if (!(OWEN.frontIsClear())) {
                         OWEN.turnLeft();
                         OWEN.turnLeft();
                         OWEN.turnLeft();
+                        OWEN.move();
 
 
                     }
