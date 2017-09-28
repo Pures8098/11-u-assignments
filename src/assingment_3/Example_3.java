@@ -40,5 +40,14 @@ public class Example_3 {
             moveCounter = moveCounter + 1;
 
         }
+         OWEN.turnLeft();
+         OWEN.turnLeft();
+         OWEN.turnLeft();
+            
+            //counted for loop
+            for (int count = 0; count < 10; count = count + 1) {
+                OWEN.move();
+            }
+        }
     }
-}
+
