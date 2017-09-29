@@ -21,8 +21,7 @@ public class Example_3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
-        //create city
+        
         //Create city
         City Owensville = new City();
 
