@@ -33,7 +33,7 @@ public class A3Q3 {
             for (int count = 0; count < 4; count = count + 1) {
                 int moveCounter = 0;
 
-                //continue whe counter is less than ten
+                //continue whe counter is less than 5
                 while (moveCounter < 5) {
                     //get OWEN to move
                     OWEN.putThing();
