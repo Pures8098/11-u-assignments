@@ -60,7 +60,7 @@ public class A3Q4 {
         new Wall(owensville, 5, 5, Direction.EAST);
         new Wall(owensville, 4, 5, Direction.EAST);
 
-        //move robot
+        //move robot with command 4 times
        for (int sunsar = 0; sunsar < 4; sunsar = sunsar + 1) 
            
        {
