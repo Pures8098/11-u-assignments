@@ -22,50 +22,49 @@ public class A3Q3 {
         // TODO code application logic here
 
         //Create city
-        City Owensville = new City();
+        City owensville = new City();
 
         //create robot
-        Robot OWEN = new Robot(Owensville, 1, 1, Direction.EAST, 20);
+        Robot oWEN = new Robot(owensville, 1, 1, Direction.EAST, 20);
 
-        Owensville.showThingCounts(true);
+        owensville.showThingCounts(true);
 
         //move robot
-            for (int count = 0; count < 4; count = count + 1) {
-                int moveCounter = 0;
+        for (int count = 0; count < 4; count = count + 1) {
+            int moveCounter = 0;
 
-                //continue whe counter is less than 5
-                while (moveCounter < 5) {
-                    //get OWEN to move
-                    OWEN.putThing();
-                    OWEN.move();
-                    //add one to move counter
-                    moveCounter = moveCounter + 1;
+            //continue whe counter is less than 5
+            while (moveCounter < 5) {
+                //get oWEN to move
+                oWEN.putThing();
+                oWEN.move();
+                //add one to move counter
+                moveCounter = moveCounter + 1;
+            }
+            if (oWEN.getDirection() == Direction.EAST) {
+                if (oWEN.getAvenue() == 6) {
+
+                    oWEN.turnLeft();
+                    oWEN.turnLeft();
+                    oWEN.turnLeft();
+                    oWEN.move();
+                    oWEN.turnLeft();
+                    oWEN.turnLeft();
+                    oWEN.turnLeft();
+                    oWEN.move();
                 }
-                if (OWEN.getDirection() == Direction.EAST) {
-                    if (OWEN.getAvenue() == 6) {
+            }
 
-                        OWEN.turnLeft();
-                        OWEN.turnLeft();
-                        OWEN.turnLeft();
-                        OWEN.move();
-                        OWEN.turnLeft();
-                        OWEN.turnLeft();
-                        OWEN.turnLeft();
-                        OWEN.move();
-                    }
-                }
-
-                if (OWEN.getDirection() == Direction.WEST) {
-                    if (OWEN.getAvenue() == 0) {
-                        OWEN.turnLeft();
-                        OWEN.move();
-                        OWEN.turnLeft();
-                        OWEN.move();
+            if (oWEN.getDirection() == Direction.WEST) {
+                if (oWEN.getAvenue() == 0) {
+                    oWEN.turnLeft();
+                    oWEN.move();
+                    oWEN.turnLeft();
+                    oWEN.move();
 
 
-                    }
                 }
             }
         }
     }
-
+}
