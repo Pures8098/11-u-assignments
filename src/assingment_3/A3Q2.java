@@ -22,55 +22,55 @@ public class A3Q2 {
         // TODO code application logic here
 
         //Create city
-        City Owensville = new City();
+        City owensville = new City();
 
         //create robot
-        Robot OWEN = new Robot(Owensville, 1, 1, Direction.EAST);
+        Robot oWEN = new Robot(owensville, 1, 1, Direction.EAST);
 
-        Owensville.showThingCounts(true);
+        owensville.showThingCounts(true);
 
         //new thing
 
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
-        new Thing(Owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
+        new Thing(owensville, 1, 2, Direction.EAST);
 
 
         //move robot
         for (int count = 0; count < 10; count = count + 1) {
 
-
-            while (OWEN.countThingsInBackpack() < 1) {
-                OWEN.move();
-                OWEN.pickThing();
+            //for picking up the things and getting into position
+            while (oWEN.countThingsInBackpack() < 1) {
+                oWEN.move();
+                oWEN.pickThing();
 
             }
-
-            if (OWEN.countThingsInBackpack() >= 1) {
-                OWEN.move();
-                OWEN.putThing();
-                OWEN.turnLeft();
-                OWEN.move();
-                OWEN.turnLeft();
-                OWEN.move();
-                OWEN.move();
-                OWEN.turnLeft();
-                OWEN.move();
-                OWEN.turnLeft();
+            //for doing commands once a certian objective has been hit with the backpack
+            if (oWEN.countThingsInBackpack() >= 1) {
+                oWEN.move();
+                oWEN.putThing();
+                oWEN.turnLeft();
+                oWEN.move();
+                oWEN.turnLeft();
+                oWEN.move();
+                oWEN.move();
+                oWEN.turnLeft();
+                oWEN.move();
+                oWEN.turnLeft();
 
 
 
             }
         }
-
-        OWEN.move();
-        OWEN.move();
+        //move afterward
+        oWEN.move();
+        oWEN.move();
     }
 }
