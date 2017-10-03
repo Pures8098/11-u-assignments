@@ -41,6 +41,7 @@ public class A3Q3 {
                 //add one to move counter
                 moveCounter = moveCounter + 1;
             }
+            //if robot is facing east then turn and move to plant move 
             if (oWEN.getDirection() == Direction.EAST) {
                 if (oWEN.getAvenue() == 6) {
 
@@ -54,7 +55,7 @@ public class A3Q3 {
                     oWEN.move();
                 }
             }
-
+            //if robot is facing west then turn and move to plant move 
             if (oWEN.getDirection() == Direction.WEST) {
                 if (oWEN.getAvenue() == 0) {
                     oWEN.turnLeft();
