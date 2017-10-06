@@ -26,11 +26,13 @@ public class A4Q2 {
         //create a Scanner for input
         Scanner input = new Scanner(System.in);
         
-         //get Year
+         //get Inch
         double Inch = input.nextDouble();
         
+        //do equation
         double Cm = 2.54 * Inch; 
         
+        //say answer
         System.out.println("Your " + Inch + " Inchs are equal to " + Cm + " Centimeters ");
         
     }
