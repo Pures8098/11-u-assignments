@@ -35,9 +35,9 @@ public class A4Q3 {
         
         
         //say numbers in position
-        System.out.println(number);
-        System.out.println(number2);
-        System.out.println(number3);
-        System.out.println(number4);
+        System.out.print( number );
+        System.out.print( number2 );
+        System.out.print( number3 );
+        System.out.print( number4 );
     }
 }
