@@ -12,6 +12,12 @@ import java.util.Scanner;
  */
 public class A4Q4 {
 
+/**
+ *
+ * @author Pures8098
+ */
+
+
     /**
      * @param args the command line arguments
      */
