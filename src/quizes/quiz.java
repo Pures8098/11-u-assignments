@@ -54,7 +54,7 @@ public class quiz {
 
 
         //move oWEN to pick up coal 4 times
-        for (int count = 0; count < 4; count = count + 1) {
+        while (oWEN.countThingsInBackpack() == 0 ) {
             //count things in backpack to make sure robot has enough coal
             while (oWEN.countThingsInBackpack() == 0) {
                 if (oWEN.canPickThing()) {
