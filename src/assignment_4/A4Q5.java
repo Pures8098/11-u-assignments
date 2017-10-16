@@ -34,7 +34,6 @@ public class A4Q5 {
         //display name
         System.out.println("welcome " + name);
 
-
         //imput what the test is out of
         System.out.println("please input the amount that the test was out of");
 
