@@ -61,7 +61,7 @@ public class A4Q6 {
             System.out.println("you got a, $" + f + " fine good job");
         }
 
-        if (fine < 21 && fine > 30) {
+        if (fine < 21 || fine > 30) {
             //calculate fine
             double f = 270;
 
