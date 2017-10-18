@@ -52,7 +52,7 @@ public class A4Q6 {
         // get fine
         double fine = (speed - speedLimit);
 
-        if (fine < 20 && fine > 1) {
+        if (fine <= 20 && fine >= 1) {
 
             //calculate fine
             double f = 100;
@@ -61,7 +61,7 @@ public class A4Q6 {
             System.out.println("you got a, $" + f + " fine good job");
         }
 
-        if (fine < 21 || fine > 30) {
+        if (fine >= 21 && fine <= 30) {
             //calculate fine
             double f = 270;
 
@@ -69,7 +69,7 @@ public class A4Q6 {
             System.out.println("you got a, $" + f + " fine good job");
         }
 
-        if (fine > 31) {
+        if (fine >= 31) {
 
             //calculate fine
             double f = 500;
@@ -86,7 +86,5 @@ public class A4Q6 {
             //display mark
             System.out.println("you got a, $" + f + " fine good job");
         }
-
-
     }
 }
