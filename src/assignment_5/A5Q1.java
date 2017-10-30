@@ -17,36 +17,48 @@ public class A5Q1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       
-        int x = 0;
-        
-        while(x < 1){
+       //start at 0
+        int a = 0;
+        //while the word is greater than zero
+        while(a < 1){
         
          System.out.print("Please enter your word: ");
-
+        //get word
             Scanner words = new Scanner(System.in);
 
             String word = words.nextLine();
-            
+            //a way to end the program
             String ex = "EXIT";
+            //brigadoon song
+            String Brigadoon = "Oh Brigadoon your at school, we think your very awesome yeas we think your cool oh brigadoon";
             
-            if(word.equals(ex)){
-                
-                System.out.print("goodbye");
+            
+            if(word.equals(Brigadoon)){
+                //system pints goodbye and ensds
+                System.out.print("Oh Brigadoon your at school, we think your very awesome yeas we think your cool oh brigadoon");
                 
                break;
                 
             }
             
+            
+            if(word.equals(ex)){
+                //system pints goodbye and ensds
+                System.out.print("goodbye");
+                
+               break;
+                
+            }
+            //empty string
             String translate = "";
             
             Boolean foundvowel = false; 
-            
+            //vowel counter
             for(int i = 0; i < word.length(); i++){
                 
                 // look for a vowel at spot i 
                 if((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u')  && foundvowel == false){
-                    
+                    //add ub
                   translate = translate + "ub";
                   
                   translate = translate + word.charAt(i);
@@ -55,7 +67,7 @@ public class A5Q1 {
                   
                   
                 }else{
-                    
+                    //skip after 2 vowels
                     if((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') && foundvowel == true){
                         translate = translate + word.charAt(i);
                     }else{
@@ -68,7 +80,7 @@ public class A5Q1 {
     }
             
             System.out.print(translate);
-            x = x +1;
+            a = a +1;
             
         }
         
