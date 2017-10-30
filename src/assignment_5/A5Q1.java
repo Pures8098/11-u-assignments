@@ -17,30 +17,60 @@ public class A5Q1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner input = new Scanner(System.in);
+       
+        int x = 0;
+        
+        while(x < 1){
+        
+         System.out.print("Please enter your word: ");
 
-        System.out.println("please enter a word");
+            Scanner words = new Scanner(System.in);
 
-        String word = input.nextLine();
-
-        word = word.toLowerCase();
-
-        String translated = "";
-
-        for (int i = 0; i < word.length(); i++) {
-
-            if (word.charAt(i) == 'a' || word.charAt(i) == ('e') || word.charAt(i) == ('i') || word.charAt(i) == ('o') || word.charAt(i) == ('u')) {
-
-                String front = word.substring(0, i);
-
-                String ending = word.substring(i);
-
-                translated = front + "ub" + ending;
-                        
-                System.out.println("the Ubbi Dubbi word is " + translated);
-
-
+            String word = words.nextLine();
+            
+            String ex = "EXIT";
+            
+            if(word.equals(ex)){
+                
+                System.out.print("goodbye");
+                
+               break;
+                
             }
-        }
+            
+            String translate = "";
+            
+            Boolean foundvowel = false; 
+            
+            for(int i = 0; i < word.length(); i++){
+                
+                // look for a vowel at spot i 
+                if((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u')  && foundvowel == false){
+                    
+                  translate = translate + "ub";
+                  
+                  translate = translate + word.charAt(i);
+                  
+                  foundvowel = true; 
+                  
+                  
+                }else{
+                    
+                    if((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') && foundvowel == true){
+                        translate = translate + word.charAt(i);
+                    }else{
+                        translate = translate + word.charAt(i);
+                        foundvowel = false;
+                    }
+                }
+            
+            
     }
+            
+            System.out.print(translate);
+            x = x +1;
+            
+        }
+        
+}
 }
