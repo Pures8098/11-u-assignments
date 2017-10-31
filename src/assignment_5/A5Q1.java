@@ -35,7 +35,7 @@ public class A5Q1 {
             
             if(word.equals(Brigadoon)){
                 //system pints goodbye and ensds
-                System.out.print("Oh Brubigubaduboon your at school, we think your very awesome yes we think your cool oh Brubigubaduboon, its the place to be, cause I respect you and you respect me, oh Brubigubaduboon");
+                System.out.print("ubOh Brubigubaduboon yubour ubat schubool, wube thubink yubour vubery awubesubomube yubes wube thubink yubour cubool uboh Brubigubaduboon, ubits thube plubacube tubo bube, cubausube I rubespubect yubou uband yubou rubespubect mube, uboh Brubigubaduboon");
                 
                break;
                 
