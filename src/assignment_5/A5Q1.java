@@ -30,12 +30,12 @@ public class A5Q1 {
             //a way to end the program
             String ex = "EXIT";
             //brigadoon song
-            String Brigadoon = "Oh Brigadoon your at school, we think your very awesome yeas we think your cool oh brigadoon";
+            String Brigadoon = "Brigadoon";
             
             
             if(word.equals(Brigadoon)){
                 //system pints goodbye and ensds
-                System.out.print("Oh Brigadoon your at school, we think your very awesome yeas we think your cool oh brigadoon");
+                System.out.print("Oh Brubigubaduboon your at school, we think your very awesome yes we think your cool oh Brubigubaduboon, its the place to be, cause I respect you and you respect me, oh Brubigubaduboon");
                 
                break;
                 
