@@ -27,7 +27,7 @@ public class A4Q7 {
 
         // name, roll
         int roll = input.nextInt();
-//dice numbers
+        //dice numbers
         while (roll < 2 || roll > 12) {
 
             System.out.println("roll again");
