@@ -10,23 +10,40 @@ import java.util.Scanner;
  *
  * @author Pures8098
  */
-public class A6Q3 {
+public class A6Q4 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //Output instructions and recive data
-        System.out.print("Enter numbers to be sorted ");
+        //ask for numbers here
+        System.out.print("Enter numbers ");
         Scanner input = new Scanner(System.in);
         int num1 = input.nextInt();
         int num2 = input.nextInt();
-        int a[] = new int[2];
-    //use array for 1 and 2
+        int num3 = input.nextInt();
+        int num4 = input.nextInt();
+        int num5 = input.nextInt();
+        int num6 = input.nextInt();
+        int num7 = input.nextInt();
+        int num8 = input.nextInt();
+        int num9 = input.nextInt();
+        int num10 = input.nextInt();
+        //create array
+        int a[] = new int[10];
+        //lable arrays
         a[0] = num1;
         a[1] = num2;
-        //flip variables i and x with a temp int
+        a[2] = num3;
+        a[3] = num4;
+        a[4] = num5;
+        a[5] = num6;
+        a[6] = num7;
+        a[7] = num8;
+        a[8] = num9;
+        a[9] = num10;
+        //sort array
         int temp;
         for (int i = 0; i < a.length; i++) {
             for (int x = i + 1; x < a.length; x++) {
@@ -37,9 +54,10 @@ public class A6Q3 {
                 }
             }
         }
-    // output and answer
+        //output order
         for (int i = 0; i < a.length; ++i) {
-            System.out.println(a[i]);
+            System.out.println("the percentages are in order :" + a[i] + "%");
         }
+
     }
 }
