@@ -17,19 +17,25 @@ public class A6Q7 {
         // TODO code application logic here
         //create array
         int a[] = new int[1001];
+
         //loop 1000 times for prime numbers
-        for (int i = 2; i < 1001; i++){
-        a[i] = i;
-        if (a/a || a/1){
-        //print prime numbers 
-        System.out.print("these are the prime numbers " + a);
-        
+        for (int i = 2; i < a.length; i++) {
+            boolean primenum = true;
+            a[i] = i;
+            //check if prime number
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    primenum = false;
+                    break;
+
+                }
+            }
+            //get prime numbers
+            if (primenum) {
+                //print prime numbers 
+                System.out.println("these are the prime numbers ");
+                System.out.println(i);
+            }
         }
-        }
-        
-        
-        
-        
-        
     }
 }
