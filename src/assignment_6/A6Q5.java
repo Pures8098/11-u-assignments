@@ -20,6 +20,7 @@ public class A6Q5 {
         System.out.print("Enter How Many Inputs ");
         Scanner input = new Scanner(System.in);
         int num1 = input.nextInt();
+        //create array
         int a[] = new int[num1];
         //get amount of numbers
         for (int i = 0; i < num1; i++) {

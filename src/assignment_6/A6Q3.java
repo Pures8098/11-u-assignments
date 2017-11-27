@@ -22,6 +22,7 @@ public class A6Q3 {
         Scanner input = new Scanner(System.in);
         int num1 = input.nextInt();
         int num2 = input.nextInt();
+        //create array
         int a[] = new int[2];
     //use array for 1 and 2
         a[0] = num1;
