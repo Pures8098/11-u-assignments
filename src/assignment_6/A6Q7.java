@@ -20,18 +20,18 @@ public class A6Q7 {
 
         //loop 1000 times for prime numbers
         for (int i = 2; i < a.length; i++) {
-            boolean primenum = true;
+            boolean primeNum = true;
             a[i] = i;
             //check if prime number
             for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
-                    primenum = false;
+                    primeNum = false;
                     break;
 
                 }
             }
             //get prime numbers
-            if (primenum) {
+            if (primeNum) {
                 //print prime numbers 
                 System.out.println("these are the prime numbers ");
                 System.out.println(i);
