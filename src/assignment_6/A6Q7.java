@@ -15,5 +15,21 @@ public class A6Q7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //create array
+        int a[] = new int[1001];
+        //loop 1000 times for prime numbers
+        for (int i = 2; i < 1001; i++){
+        a[i] = i;
+        if (a/a || a/1){
+        //print prime numbers 
+        System.out.print("these are the prime numbers " + a);
+        
+        }
+        }
+        
+        
+        
+        
+        
     }
 }
