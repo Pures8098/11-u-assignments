@@ -27,7 +27,6 @@ public class A6Q7 {
                 if (i % j == 0) {
                     primeNum = false;
                     break;
-
                 }
             }
             //get prime numbers
