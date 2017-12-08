@@ -15,7 +15,7 @@ public class A7Q5 {
     public void lines(double a) {
 
         //loop
-        for (int i = 0; i <= a; i++) {
+        for (int i = 0; i < a; i++) {
             //create a equation
             int randNum = (int) (Math.random() * (5 - 1 + 1)) + 1;
             //if one of five specific numbers then display however many astrisicts respectivly
