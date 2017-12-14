@@ -17,7 +17,6 @@ public class A6Q7 {
         // TODO code application logic here
         //create array
         int a[] = new int[1001];
-
         //loop 1000 times for prime numbers
         for (int i = 2; i < a.length; i++) {
             boolean primeNum = true;

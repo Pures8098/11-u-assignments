@@ -21,6 +21,7 @@ public class A7Q7 {
             //display first positive digit
             System.out.println("This is the first digit " + num1);
         } else {
+            //if number is negative get first negative digit
             if (num1 < -9) {
                 while (num1 < -9) {
                     num1 = num1 / 10;
