@@ -53,6 +53,10 @@ public class summative extends JComponent {
     boolean onGround2 = true;
     boolean gun = false;
     boolean gun2 = false;
+    int bulletXDirection = 1;
+    int bullet2XDirection = 1;
+    //create velocity
+    int bulletSpeed = 2;
     //create score
     int playerScore = 10;
     int playerScore2 = 10;
@@ -114,6 +118,22 @@ public class summative extends JComponent {
         if (playerScore2 == 0) {
             g.drawString("   you lost", WIDTH / 2 , 120);
         }
+        
+        if(gun){
+        gun = true;
+        g.fillRect(player.x - 15, player.y +15, 15, 15);
+        }
+        
+        if(gun2){
+        gun2 = true;
+        g.fillRect(player2.x - 15, player2.y +15, 15, 15);
+        }
+        
+        
+        
+        
+        
+        
         // GAME DRAWING ENDS HERE
     }
 
@@ -290,20 +310,12 @@ public class summative extends JComponent {
             if (playerScore2 == 0) {
                 done = true;
             }
+           
+            if (gun = true){
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            }
             
             
             // GAME LOGIC ENDS HERE 
