@@ -32,6 +32,8 @@ public class summative extends JComponent {
     //create players
     Rectangle player = new Rectangle(50, 400, 25, 50);
     Rectangle player2 = new Rectangle(WIDTH-50, 400, 25, 50);
+    Rectangle bullet = new Rectangle(player.x +25, player.y +15, 15, 15);
+    Rectangle bullet2 = new Rectangle(player2.x - 15, player2.y +15, 15, 15);
     //create player x and y axis
     int playerDX = 0;
     int playerDY = 0;
@@ -56,7 +58,7 @@ public class summative extends JComponent {
     int bulletXDirection = 1;
     int bullet2XDirection = 1;
     //create velocity
-    int bulletSpeed = 2;
+    int bulletSpeed = 10;
     //create score
     int playerScore = 10;
     int playerScore2 = 10;
@@ -121,12 +123,12 @@ public class summative extends JComponent {
         
         if(gun){
         gun = true;
-        g.fillRect(player.x - 15, player.y +15, 15, 15);
+        g.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
         }
         
         if(gun2){
         gun2 = true;
-        g.fillRect(player2.x - 15, player2.y +15, 15, 15);
+        g.fillRect(bullet2.x, bullet2.y, bullet2.width, bullet2.height);
         }
         
         
@@ -310,13 +312,23 @@ public class summative extends JComponent {
             if (playerScore2 == 0) {
                 done = true;
             }
-           
-            if (gun = true){
+           if(gun){
+             bullet.x = bullet.x + bulletXDirection * bulletSpeed;
+           }
+           if(gun2){
+             bullet2.x = bullet2.x + (bullet2XDirection * -1) * bulletSpeed;
+           }
+             
+            if(!(gun)){
+              bullet.x = player.x + 25;
+              bullet.y = player.y + 15;
+           }
             
-            
-            
-            }
-            
+            if(!(gun2)){
+              bullet2.x = player2.x - 15;
+              bullet2.y = player2.y + 15;
+           }
+             
             
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
