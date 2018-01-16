@@ -60,7 +60,7 @@ public class summative extends JComponent {
     int bulletXDirection = 1;
     int bullet2XDirection = 1;
     //create velocity
-    int bulletSpeed = 10;
+    int bulletSpeed = 25;
     //create score
     int playerScore = 10;
     int playerScore2 = 10;
@@ -133,7 +133,12 @@ public class summative extends JComponent {
             g.fillRect(bullet2.x, bullet2.y, bullet2.width, bullet2.height);
         }
         if (laserLength) {
-            g.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+            laserLength = true;
+            g.fillRect(bullet.x, bullet.y, bullet.width + 50, bullet.height);
+        }
+         if (laser2Length) {
+            laser2Length = true;
+            g.fillRect(bullet2.x, bullet2.y, bullet2.width + 50, bullet2.height);
         }
         // GAME DRAWING ENDS HERE
     }
@@ -318,11 +323,28 @@ public class summative extends JComponent {
              laserLength = true;
             }
             }
+ 
+             if (gun2) {
+            for (int i = bullet.width;i <= WIDTH - 400 ;i++){
+             laser2Length = true;
+            }
+            }
             
-            
-            
-            
-            
+             if (bullet2.intersects(player)) {
+                player.x = playerDX + 50;
+                player.y = playerDY + 375;
+                playerScore = playerScore - 1;
+            }
+
+            if (bullet.intersects(player2)) {
+                player2.x = player2DX + WIDTH - 50;
+                player2.y = player2DY + 395;
+                playerScore2 = playerScore2 - 1;
+            }
+             
+              
+             
+             
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
             repaint();
@@ -426,6 +448,12 @@ public class summative extends JComponent {
             }
             if (key == KeyEvent.VK_M) {
                 gun2 = false;
+            }
+              if (key == KeyEvent.VK_Q) {
+                laserLength = false;
+            }
+            if (key == KeyEvent.VK_M) {
+                laser2Length = false;
             }
         }
     }
