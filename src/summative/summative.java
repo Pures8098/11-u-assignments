@@ -136,7 +136,7 @@ public class summative extends JComponent {
             laserLength = true;
             g.fillRect(bullet.x, bullet.y, bullet.width + 50, bullet.height);
         }
-         if (laser2Length) {
+        if (laser2Length) {
             laser2Length = true;
             g.fillRect(bullet2.x, bullet2.y, bullet2.width + 50, bullet2.height);
         }
@@ -317,34 +317,60 @@ public class summative extends JComponent {
                 bullet2.x = player2.x - 15;
                 bullet2.y = player2.y + 15;
             }
-            
+
             if (gun) {
-            for (int i = bullet.width;i <= WIDTH ;i++){
-             laserLength = true;
+                for (int i = bullet.width; i <= WIDTH; i++) {
+                    laserLength = true;
+                }
             }
+
+            if (gun2) {
+                for (int i = bullet.width; i <= WIDTH - 400; i++) {
+                    laser2Length = true;
+                }
             }
- 
-             if (gun2) {
-            for (int i = bullet.width;i <= WIDTH - 400 ;i++){
-             laser2Length = true;
-            }
-            }
-            
-             if (bullet2.intersects(player)) {
+
+            if (bullet2.intersects(player)) {
                 player.x = playerDX + 50;
                 player.y = playerDY + 375;
                 playerScore = playerScore - 1;
+                laser2Length = false;
+                gun2 = false;
             }
 
             if (bullet.intersects(player2)) {
                 player2.x = player2DX + WIDTH - 50;
                 player2.y = player2DY + 395;
                 playerScore2 = playerScore2 - 1;
+                laserLength = false;
+                gun = false;
             }
-             
-              
-             
-             
+            for (int i = 0; i < blocks.length; i++) {
+                if (bullet.intersects(blocks[i])) {
+                    int cHeight = Math.min(blocks[i].y + blocks[i].height, player.y + player.height) - Math.max(blocks[i].y, player.y);
+                    int cWidth = Math.min(blocks[i].x + blocks[i].width, player.x + player.width) - Math.max(blocks[i].x, player.x);
+                    if (cWidth < cHeight) {
+                        blocks[i].x = 999;
+                        laserLength = false;
+                        gun = false;
+                    }
+                }
+            }
+            
+            for (int i = 0; i < blocks.length; i++) {
+                if (bullet2.intersects(blocks[i])) {
+                    int cHeight = Math.min(blocks[i].y + blocks[i].height, player2.y + player2.height) - Math.max(blocks[i].y, player2.y);
+                    int cWidth = Math.min(blocks[i].x + blocks[i].width, player2.x + player2.width) - Math.max(blocks[i].x, player2.x);
+                    if (cWidth < cHeight) {
+                        blocks[i].x = 999;
+                        laser2Length = false;
+                        gun2 = false;
+                    }
+                }
+            }
+
+
+
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
             repaint();
@@ -449,7 +475,7 @@ public class summative extends JComponent {
             if (key == KeyEvent.VK_M) {
                 gun2 = false;
             }
-              if (key == KeyEvent.VK_Q) {
+            if (key == KeyEvent.VK_Q) {
                 laserLength = false;
             }
             if (key == KeyEvent.VK_M) {
