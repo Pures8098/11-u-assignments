@@ -138,7 +138,7 @@ public class summative extends JComponent {
         }
         if (laser2Length) {
             laser2Length = true;
-            g.fillRect(bullet2.x, bullet2.y, bullet2.width + 50, bullet2.height);
+            g.fillRect(bullet2.x - 50, bullet2.y, bullet2.width + 50, bullet2.height);
         }
         // GAME DRAWING ENDS HERE
     }
@@ -345,29 +345,34 @@ public class summative extends JComponent {
                 laserLength = false;
                 gun = false;
             }
-            for (int i = 0; i < blocks.length; i++) {
-                if (bullet.intersects(blocks[i])) {
-                    int cHeight = Math.min(blocks[i].y + blocks[i].height, player.y + player.height) - Math.max(blocks[i].y, player.y);
-                    int cWidth = Math.min(blocks[i].x + blocks[i].width, player.x + player.width) - Math.max(blocks[i].x, player.x);
-                    if (cWidth < cHeight) {
+            if (laserLength) {
+                for (int i = 0; i < blocks.length; i++) {
+                    if (bullet.intersects(blocks[i])) {
                         blocks[i].x = 999;
                         laserLength = false;
                         gun = false;
                     }
                 }
             }
-            
-            for (int i = 0; i < blocks.length; i++) {
-                if (bullet2.intersects(blocks[i])) {
-                    int cHeight = Math.min(blocks[i].y + blocks[i].height, player2.y + player2.height) - Math.max(blocks[i].y, player2.y);
-                    int cWidth = Math.min(blocks[i].x + blocks[i].width, player2.x + player2.width) - Math.max(blocks[i].x, player2.x);
-                    if (cWidth < cHeight) {
+            if (laser2Length) {
+                for (int i = 0; i < blocks.length; i++) {
+                    if (bullet2.intersects(blocks[i])) {
                         blocks[i].x = 999;
                         laser2Length = false;
                         gun2 = false;
                     }
                 }
             }
+
+            if (bulletXDirection == 1) {
+                gun = true;
+                laserLength = true;
+                    }
+                
+            if (bullet2XDirection == 1) {
+                gun2 = true;
+                laser2Length = true;
+                    }
 
 
 
