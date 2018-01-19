@@ -43,7 +43,7 @@ public class summative extends JComponent {
     //ceate gravity
     int gravity = 1;
     //create amount 
-    Rectangle[] blocks = new Rectangle[16];
+    Rectangle[] blocks = new Rectangle[17];
     //boolean commands for movement 
     boolean playerUp = false;
     boolean playerRight = false;
@@ -55,8 +55,6 @@ public class summative extends JComponent {
     boolean onGround2 = true;
     boolean gun = false;
     boolean gun2 = false;
-    boolean laserLength = false;
-    boolean laser2Length = false;
     int bulletXDirection = 1;
     int bullet2XDirection = 1;
     //create velocity
@@ -125,21 +123,18 @@ public class summative extends JComponent {
             g.drawString("   player2 lost", WIDTH / 2 - 200, 250);
         }
         if (gun) {
-            gun = true;
+
             g.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
-        }
-        if (gun2) {
-            gun2 = true;
-            g.fillRect(bullet2.x, bullet2.y, bullet2.width, bullet2.height);
-        }
-        if (laserLength) {
-            laserLength = true;
             g.fillRect(bullet.x, bullet.y, bullet.width + 50, bullet.height);
         }
-        if (laser2Length) {
-            laser2Length = true;
+        if (gun2) {
+
+            g.fillRect(bullet2.x, bullet2.y, bullet2.width, bullet2.height);
             g.fillRect(bullet2.x - 50, bullet2.y, bullet2.width + 50, bullet2.height);
         }
+
+
+
         // GAME DRAWING ENDS HERE
     }
     // This method is used to do any pre-setup you might need to do
@@ -161,8 +156,9 @@ public class summative extends JComponent {
         blocks[11] = new Rectangle(WIDTH - 400, 325, 25, 25);
         blocks[12] = new Rectangle(WIDTH - 300, 325, 25, 25);
         blocks[13] = new Rectangle(WIDTH - 50, 525, 100, 25);
-        blocks[14] = new Rectangle(WIDTH / 2 + 50, 500, 100, 100);
-        blocks[15] = new Rectangle(WIDTH / 2 - 50, 500, 100, 100);
+        blocks[14] = new Rectangle(WIDTH / 2 + 50, 500, 100, 25);
+        blocks[15] = new Rectangle(WIDTH / 2 - 50, 500, 100, 25);
+        blocks[16] = new Rectangle(WIDTH - 225, 550, 150, 25);
     }
     // The main game loop
     // In here is where all the logic for my game will go
@@ -318,23 +314,10 @@ public class summative extends JComponent {
                 bullet2.y = player2.y + 15;
             }
 
-            if (gun) {
-                for (int i = bullet.width; i <= WIDTH; i++) {
-                    laserLength = true;
-                }
-            }
-
-            if (gun2) {
-                for (int i = bullet.width; i <= WIDTH - 400; i++) {
-                    laser2Length = true;
-                }
-            }
-
             if (bullet2.intersects(player)) {
                 player.x = playerDX + 50;
                 player.y = playerDY + 375;
                 playerScore = playerScore - 1;
-                laser2Length = false;
                 gun2 = false;
             }
 
@@ -342,37 +325,38 @@ public class summative extends JComponent {
                 player2.x = player2DX + WIDTH - 50;
                 player2.y = player2DY + 395;
                 playerScore2 = playerScore2 - 1;
-                laserLength = false;
                 gun = false;
             }
-            if (laserLength) {
+            if (gun) {
                 for (int i = 0; i < blocks.length; i++) {
                     if (bullet.intersects(blocks[i])) {
                         blocks[i].x = 999;
-                        laserLength = false;
                         gun = false;
                     }
                 }
             }
-            if (laser2Length) {
+            if (gun2) {
                 for (int i = 0; i < blocks.length; i++) {
                     if (bullet2.intersects(blocks[i])) {
                         blocks[i].x = 999;
-                        laser2Length = false;
                         gun2 = false;
                     }
                 }
             }
 
-            if (bulletXDirection == 1) {
-                gun = true;
-                laserLength = true;
-                    }
-                
-            if (bullet2XDirection == 1) {
-                gun2 = true;
-                laser2Length = true;
-                    }
+            if (bullet.x > WIDTH){
+                bullet.x = player.x + 25;
+                bullet.y = player.y + 15;
+                gun = false;
+            }
+            
+            if (bullet2.x < 0){
+                bullet2.x = player2.x - 15;
+                bullet2.y = player2.y + 15;
+                gun2 = false;
+            }
+
+
 
 
 
@@ -473,18 +457,6 @@ public class summative extends JComponent {
             }
             if (key == KeyEvent.VK_LEFT) {
                 player2Left = false;
-            }
-            if (key == KeyEvent.VK_Q) {
-                gun = false;
-            }
-            if (key == KeyEvent.VK_M) {
-                gun2 = false;
-            }
-            if (key == KeyEvent.VK_Q) {
-                laserLength = false;
-            }
-            if (key == KeyEvent.VK_M) {
-                laser2Length = false;
             }
         }
     }
