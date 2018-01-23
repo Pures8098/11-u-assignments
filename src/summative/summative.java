@@ -83,10 +83,11 @@ public class summative extends JComponent {
     //create score
     int playerScoreN = 10;
     int playerScore2N = 10;
-    int playerScoreI = 20;
-    int playerScore2I = 20;
+    int playerScoreI = 15;
+    int playerScore2I = 15;
     //font
     Font scoreFont = new Font("comicsans", Font.BOLD, 42);
+    Font openingFont = new Font("comicsans", Font.BOLD, 18);
     //cool image
     BufferedImage pic = loadImage("Red-vs-Blue.jpg");
     // GAME VARIABLES END HERE   
@@ -136,8 +137,9 @@ public class summative extends JComponent {
             //picture
             g.drawImage(pic, 0, 0, WIDTH, HEIGHT, null);
             //title and info
+            g.setFont(openingFont);
             g.setColor(Color.green);
-            g.drawString("welcome to Red vs Blue", WIDTH / 2 - 50, 25);
+            g.drawString("welcome to Red vs Blue", WIDTH / 2 - 100, 25);
             g.drawString("1 for normal", WIDTH / 2 - 50, 50);
             g.drawString("2 for insane", WIDTH / 2 - 50, 100);
             g.drawString("W for player 1 jump", WIDTH / 2 - 50, 150);
